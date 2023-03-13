@@ -1,4 +1,4 @@
-#!/usr/bin/python1
+#!/usr/bin/python3
 # 0-print_list_integer.py
 
 
