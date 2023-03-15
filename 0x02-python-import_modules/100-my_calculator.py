@@ -19,6 +19,6 @@ if __name__ == "__main__":
         result = op(num1. num2)
         print('{:d} {:s} {:d} = {:d}'.format(num1, argv[2], num2, result))
     else:
-        print('unknown operator. Available operators: +, -, *, /')
+        print('Unknown operator. Available operators: +, -, * and /')
         exit(1)
     exit(0)
