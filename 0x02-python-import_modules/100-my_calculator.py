@@ -11,7 +11,7 @@ if __name__ == "__main__":
         '-': sub,
         '*': mul,
         '/': div
-    }
+        }
     if argv[2] in ops:
         num1 = int(argv[1])
         num2 = int(argv[3])
