@@ -19,7 +19,11 @@ int check_cycle(listint_t *list)
 		fast = fast->next->next;
 		if (slow == fast)
 			return (1);
+<<<<<<< HEAD
 	}
 
 	return (0);
 }
+=======
+	}}
+>>>>>>> 4b3cce69550c1dc02fd054135f26bdbeaf8c6a6a
