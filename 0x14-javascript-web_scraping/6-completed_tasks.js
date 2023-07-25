@@ -1,22 +1,21 @@
 #!/usr/bin/node
-
 const request = require('request');
 
-request(process.argv[2], function (error, response, body) {
+// The first argument is the API URL
+const baseURL = process.argv[2];
+request(baseURL, (error, response, body) => {
+  const aggregate = {};
   if (error) {
-    console.error(error);
+    console.log(error);
   }
-  const dict = JSON.parse(body).reduce((acc, elem) => {
-    if (!acc[elem.userId]) {
-      if (elem.completed) {
-        acc[elem.userId] = 1;
+  const json = JSON.parse(body);
+  json.forEach(element => {
+    if (element.completed) {
+      if (!aggregate[element.userId]) {
+        aggregate[element.userId] = 0;
       }
-    } else {
-      if (elem.completed) {
-        acc[elem.userId] += 1;
-      }
+      aggregate[element.userId]++;
     }
-    return acc;
-  }, {});
-  console.log(dict);
+  });
+  console.log(aggregate);
 });
